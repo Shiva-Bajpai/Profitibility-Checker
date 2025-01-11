@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramen Profitability Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-xl font-bold mb-2 text-center">Ramen Profitability Calculator</h1>
+        
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="income-goal-slider">
+                    Monthly Income Goal ($)
+                </label>
+                <input type="range" id="income-goal-slider" class="slider mb-2" min="0" max="10000" step="100" value="5000">
+                <input type="number" id="income-goal-input" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="5000" max="10000">
+            </div>
+            
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="product-price-slider">
+                    Product Price ($)
+                </label>
+                <input type="range" id="product-price-slider" class="slider mb-2" min="0" max="500" step="0.5" value="10">
+                <input type="text" id="product-price-input" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="10" max="500">
+            </div>
+            
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="customer-count-slider">
+                    Customer Count
+                </label>
+                <input type="range" id="customer-count-slider" class="slider mb-2" min="0" max="1000" step="1" value="500">
+                <input type="number" id="customer-count-input" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="500" max="1000">
+            </div>
+            
+            <div class="results-section bg-white shadow-md rounded px-8 py-6 mt-8">
+                <!-- <h2 class="text-2xl font-bold mb-4 text-center">Summary</h2> -->
+                <div class="flex flex-col items-center">
+                    <p id="customer-count-needed" class="text-xl font-bold mb-1"></p>
+                    <p id="product-price-needed" class="text-xl font-bold mb-1"></p>
+                    <!-- <p class="mb-2 text-sm text-gray-600">Needed to make</p> -->
+                    <span id="result-display" class="font-bold text-3xl text-green-600 mb-0"></span>
+                    <p id="difference-display" class="font-semibold text-lg mb-0"></p>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="https://buymeacoffee.com/shiva.codes" target="_blank" class="inline-flex items-center px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-bold rounded-full transition-colors duration-200 shadow-md hover:shadow-lg">
+                    <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" class="w-6 h-6 mr-3">
+                    <span>Buy me a coffee</span>
+                </a>
+            </div>
+        </div>
+
+        </div>
+
+    
+    <footer class="mt-4 text-center text-gray-600">
+        built by <a href="https://x.com/sb__codes" target="_blank" class="text-red-900 hover:underline">@Shiva Bajpai</a>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='js/calculator.js') }}"></script>
+</body>
+</html>
